@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast Weather App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SkyCast</h1>
+    <div class="input-section">
+      <div class="input-group">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="submitBtn">Get Weather</button>
+      </div>
+      <div class="input-group">
+        <button id="locationBtn"><i class="fas fa-location-arrow"></i> Use Current Location</button>
+        <label for="tempUnitToggle">
+          <input type="checkbox" id="tempUnitToggle"> Show in Fahrenheit
+        </label>
+      </div>
+    </div>
+    <div id="loading" class="loading-spinner" style="display: none;"></div>
+    <div id="weatherDisplay" class="weather-display"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
