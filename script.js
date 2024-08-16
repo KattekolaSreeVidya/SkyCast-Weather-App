@@ -1,5 +1,3 @@
-// script.js
-
 document.getElementById('submitBtn').addEventListener('click', function() {
     const city = document.getElementById('cityInput').value.trim();
     if (city === '') {
@@ -49,7 +47,7 @@ document.getElementById('submitBtn').addEventListener('click', function() {
   function displayWeather(data) {
     const { location, current } = data;
     const { name, country } = location;
-    let { temp_c, condition, humidity } = current;
+    let { temp_c, condition, humidity, wind_kph } = current;
   
     const tempUnitToggle = document.getElementById('tempUnitToggle');
     const isFahrenheit = tempUnitToggle.checked;
@@ -63,6 +61,10 @@ document.getElementById('submitBtn').addEventListener('click', function() {
       <p class="weather-info">Temperature: ${temperature.toFixed(1)}°${isFahrenheit ? 'F' : 'C'}</p>
       <p class="weather-info">Humidity: ${humidity}%</p>
       <p class="weather-info">Condition: ${condition.text}</p>
+      <div class="weather-details">
+        <p>Wind: ${wind_kph} kph</p>
+        <p>Cloud Cover: ${current.cloud}%</p>
+      </div>
     `;
     document.getElementById('weatherDisplay').innerHTML = weatherHTML;
   }
@@ -75,4 +77,3 @@ document.getElementById('submitBtn').addEventListener('click', function() {
     if (code >= 1273 && code <= 1279) return 'fas fa-poo-storm';
     return 'fas fa-sun'; // Default icon
   }
-  
